@@ -16,6 +16,11 @@
 | PostgreSQL | Banco de dados relacional |
 | Pydantic | Validação de dados |
 | Uvicorn | Servidor ASGI |
+| Passlib & Bcrypt | Criptografia segura de senhas |
+| Python-dotenv | Gerenciamento de variáveis de ambiente |
+### 🔒 Segurança Aplicada
+* **Proteção de Senhas:** Nenhuma credencial de acesso é armazenada em texto limpo. A API utiliza a técnica de hashing com o algoritmo **Bcrypt** para blindar as senhas no banco de dados.
+* **Isolamento de Credenciais:** Strings de conexão e senhas do banco PostgreSQL ficam totalmente ocultas em um arquivo `.env` local, respeitando as regras do arquivo `.gitignore`.
 
 ---
 
