@@ -49,6 +49,13 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-**3. Configure o banco de dados**
+## 📌 Como configurar o Banco de Dados
 
-Crie um banco PostgreSQL chamado `finance_db` e configure a `DATABASE_URL` no `database.py`:
+Esta API utiliza variáveis de ambiente para proteger as credenciais de acesso ao banco de dados.
+
+1. Na raiz do projeto, duplique o arquivo `.env.example` e renomeie a cópia apenas para `.env`.
+2. Abra o novo arquivo `.env` e substitua os valores fictícios pelos dados do seu PostgreSQL local:
+   ```text
+   DATABASE_URL=postgresql://seu_usuario:sua_senha@localhost:5432/finance_db
+   ```
+3. Certifique-se de ter criado um banco de dados vazio chamado `finance_db` no seu PostgreSQL antes de iniciar o servidor.
