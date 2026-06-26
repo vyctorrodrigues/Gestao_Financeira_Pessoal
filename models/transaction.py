@@ -4,6 +4,8 @@ import enum
 
 from sqlalchemy import Column, String, Enum, Numeric, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
+
 from database import Base
 from datetime import datetime
 
@@ -20,3 +22,5 @@ class Transaction(Base):
     amount = Column(Numeric(10,2), nullable=False)
     type = Column(Enum(TransactionType), nullable=False)
     date = Column(DateTime, default=datetime, nullable=False)
+
+    user = relationship("User", back_populates="transactions")

@@ -1,6 +1,8 @@
 import uuid
 from sqlalchemy import Column, String, Numeric,Date, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
+
 from database import Base
 
 class Goal(Base):
@@ -11,3 +13,5 @@ class Goal(Base):
     name = Column(String, nullable=False)
     target_amount = Column(Numeric(10,2), nullable=False)
     deadline = Column(Date, nullable=False)
+
+    user = relationship("User", back_populates="goal")
